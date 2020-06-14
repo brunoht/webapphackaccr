@@ -44,15 +44,15 @@ const routes = [
     component: () => import("@/views/Dashboard.vue")
   },
   {
-    path: "/adicionar-ponto",
-    name: "add-point",
+    path: "/primeiro-acesso",
+    name: "first-access",
     beforeEnter: (to, from, next) => {
       if (!store.getters["auth/authenticated"]) {
         return next({ name: "login" });
       }
       next();
     },
-    component: () => import("@/views/AddPoint.vue")
+    component: () => import("@/views/FirstAccess.vue")
   },
 ]
 

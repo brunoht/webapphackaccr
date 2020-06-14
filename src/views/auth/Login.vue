@@ -84,7 +84,7 @@ export default {
         .then(() => {
           console.log("worked");
           this.$router.replace({
-            name: "dashboard"
+            name: "first-access"
           });
         })
         .catch(() => {
