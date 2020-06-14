@@ -1,29 +1,32 @@
 <template>
     <div class="place-header">
         <div class="icon-action">
-            <a class=""><Icon /></a>
+            <slot />
         </div>
         <div class="header-cover">
-            <img src="https://placehold.it/375x210" />
+            <img :src="image" />
         </div>
         <header class="bar-header">
-            <h2 class="title-header">Posto Castelo Branco</h2>
-            <span class="info-text">Av Caxambu, Rua 23, Lote 15 • 0.7 kms</span>
+            <h2 class="title-header">{{ title }}</h2>
+            <span class="info-text">{{ text }}</span>
+            <ReviewBar />
         </header>
     </div>
 </template>
 
 <script>
     import Icon from "@/components/Icon";
+    import ReviewBar from "@/components/ReviewBar";
     export default {
-        components: { Icon }
+        components: { Icon, ReviewBar },
+        props: ['title','text','image']
     };
 </script>
 
 <style lang="scss" scope>
     .place-header{
         color: var(--neutral-color);
-        background: #ffffff;
+        background: var(--background-color);
 
         .header-cover{
             min-height: 116px;
@@ -45,12 +48,12 @@
         }
 
         .bar-header{
-            padding: 16px 32px;
+            padding: 20px;
 
             .title-header{
                 font-weight: bold;
                 font-size: 27px;
-                line-height: 32px;
+                line-height: 1;
                 margin-bottom: 8px;
             }
 

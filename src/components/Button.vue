@@ -19,6 +19,9 @@
         font-size: 14px;
         border-radius: 24px;
         font-weight: 400;
+        -webkit-box-shadow: 0 8px 16px 0 var(--main-color-s);
+        box-shadow: 0 8px 16px 0 var(--main-color-s);
+        border: 1px solid rgba(0,0,0,0.0);
 
         &:focus, &:hover{
             outline: none;
@@ -28,8 +31,6 @@
         &:active{
             outline: none;
             background: var(--main-color-d);
-            -webkit-box-shadow: 0 8px 16px 0 var(--main-color-s);
-            box-shadow: 0 8px 16px 0 var(--main-color-s);
         }
 
         &.blockable{
@@ -38,9 +39,11 @@
         }
         
         &.link{
-            background: white;
+            background: var(--fore-color);
             color:  var(--neutral-color);
-            border: 1px solid rgba(0,0,0,0.16);
+            border: 1px solid var(--shadow-color-s);
+            -webkit-box-shadow: none;
+            box-shadow: none;
 
             // &:focus{
             //     border-color: var(--main-color);
@@ -50,8 +53,8 @@
             // }
 
             &:active{
-                background: var(--main-color-s);
-                border-width: 0px;
+                background: var(--main-color);
+                border-color: rgba(0,0,0,0.0);
             }
         }
     }
