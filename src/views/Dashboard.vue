@@ -4,7 +4,7 @@
     <div>
       <input type="text" placeholder="Pesquisar por local" />
 
-      <hr>
+      <hr />
 
       <!-- SECTION 1 -->
       <div>
@@ -60,6 +60,39 @@ export default {
   name: "Home",
   components: {
     Header
+  },
+  data() {
+    return {
+      search: null,
+      filters: [
+        {
+          name: "",
+          tags: [
+            { id: 1, nome: "Local para banho grátis", type: 1, checked: false },
+            { id: 2, nome: "Local para banho limpo", type: 1, checked: false },
+            { id: 3, nome: "Boa comida", type: 1, checked: false },
+            { id: 4, nome: "Banheiros Limpos", type: 1, checked: false },
+            { id: 5, nome: "Caixa 24h", type: 1, checked: false },
+            { id: 6, nome: "TV com Futebol", type: 1, checked: false }
+          ]
+        }
+      ],
+      popularity: "asc",
+      results: [
+        {
+          id: 1,
+          name: "",
+          address: "",
+          image: "",
+          google_maps_url: "",
+          tags: {
+            good: 10,
+            neutral: 5,
+            bad: 5
+          }
+        }
+      ]
+    };
   },
   methods: {
     loadUsers() {
