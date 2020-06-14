@@ -1,5 +1,5 @@
 <template>
-    <div class="app-header shadow">
+    <div class="app-header">
         <div class="icon-action">
             <a class=""><Icon /></a>
         </div>        
@@ -9,6 +9,7 @@
         <p class="header-text">é bem rápido!</p>
     </div>
 </template>
+
 <script>
     import Icon from "@/components/Icon";
     export default {
@@ -18,9 +19,8 @@
 
 <style lang="scss" scope>
     .app-header{
-        padding: 60px 32px 32px 32px;
+        margin-top: 28px;
         color: var(--neutral-color);
-        background: #ffffff;
 
         .icon-action{
             height: 24px;

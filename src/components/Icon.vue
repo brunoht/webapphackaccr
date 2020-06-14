@@ -10,5 +10,10 @@
     .icon{
         height: 24px;
         width: 24px;
+
+        &.min{
+            height: 16px;
+            width: 16px;
+        }
     }
 </style>

@@ -1,5 +1,10 @@
 <template>
-  <Header />
+  <div class="flex-height base-padding">
+    <Header />
+      <div>
+        
+      </div>
+  </div>
 </template>
 
 <script>

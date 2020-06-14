@@ -19,15 +19,24 @@ export default {
 
 :root{
   --fore-color: #F6F7FB;
-  --main-color: #187DE8;
+  --main-color: #177ce8;
+  --main-color-s: #177ce833;
+  --main-color-d: #1856E8;
   --good-color: #17E3B3;
   --bad-color: #F75D34;
   --neutral-color: #293340;
+  --neutral-color-s: #293340;
   --shadow-color: #474D60;
+  --shadow-color-s: #474D6033;
 }
 
 .base-padding{
   padding: 32px;
+  background: #ffffff;
+}
+
+.flex-height{
+  flex: 1;
 }
 
 .shadow{
@@ -38,9 +47,12 @@ export default {
 html{
   background: var(--fore-color);
   margin: 0px;
+  min-height: 100vh;
 
   body{
     margin: 0px;
+    min-height: 100vh;
+    display: block;
   }
 }
 
@@ -49,5 +61,7 @@ html{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--neutral-color);
+  min-height: 100vh;
+  display: flex;
 }
 </style>
