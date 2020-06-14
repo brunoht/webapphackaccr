@@ -2,7 +2,7 @@
     <div class="app-header">
         <div class="icon-action">
             <a class=""><Icon /></a>
-        </div>        
+        </div>
         <header class="bar-header">
             <h2 class="title-header">Acesse nossa rede usando só seu WhatsApp</h2>
         </header>

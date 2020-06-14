@@ -1,20 +1,36 @@
 <template>
-  <div>
-    <h1>Dashboard</h1>
+  <div class="flex-height base-padding">
+    <Header />
+    <div>
+      <template v-if="authenticated">
+        <router-link :to="{ name: 'dashboard'}">Dashboard</router-link>|
+        <router-link :to="{ name: 'logout'}">Sair</router-link>
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "dashboard",
-  methods: {
-    loadUsers() {
-      axios.get("/users").then(function(response) {
-        console.log(response.data);
-      });
+  import Header from "@/components/Header";
+  import { mapGetters } from "vuex";
+  export default {
+    name: "Home",
+    components: {
+      Header
+    },
+    methods: {
+      loadUsers() {
+        axios.get("/users").then(function(response) {
+          console.log(response.data);
+        });
+      }
+    },
+    computed: {
+      ...mapGetters({
+        authenticated: "auth/authenticated"
+      })
     }
-  }
-};
+  };
 </script>
 
 <style>

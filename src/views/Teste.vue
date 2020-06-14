@@ -1,15 +1,17 @@
 <template>
-  <Layout></Layout>
+  <div class="flex-height base-padding">
+    <Header />
+      <div>
+      </div>
+  </div>
 </template>
 
 <script>
-import Layout from "@/components/Component";
-export default {
-  components: {
-    Layout
-  }
-};
+  import Header from "@/components/Header";
+  export default {
+    name: "Home",
+    components: {
+      Header
+    }
+  };
 </script>
-
-<style>
-</style>
