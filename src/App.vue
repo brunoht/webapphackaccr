@@ -25,7 +25,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang:"scss">
+
+:root{
+  --main-color: #187DE8;
+  --good-color: #17E3B3;
+  --bad-color: #F75D34;
+  --neutral-color: #293340;
+}
 
 
 #app {
