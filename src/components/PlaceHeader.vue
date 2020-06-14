@@ -1,12 +1,15 @@
 <template>
-    <div class="app-header">
+    <div class="place-header">
         <div class="icon-action">
             <a class=""><Icon /></a>
         </div>
+        <div class="header-cover">
+            <img src="https://placehold.it/375x210" />
+        </div>
         <header class="bar-header">
-            <h2 class="title-header">Acesse nossa rede usando só seu WhatsApp</h2>
+            <h2 class="title-header">Posto Castelo Branco</h2>
+            <span class="info-text">Av Caxambu, Rua 23, Lote 15 • 0.7 kms</span>
         </header>
-        <p class="header-text">é bem rápido!</p>
     </div>
 </template>
 
@@ -18,9 +21,19 @@
 </script>
 
 <style lang="scss" scope>
-    .app-header{
-        margin-top: 28px;
+    .place-header{
         color: var(--neutral-color);
+        background: #ffffff;
+
+        .header-cover{
+            min-height: 116px;
+            max-height: 210px;
+            overflow: hidden;
+
+            img{
+                min-width: 100%;
+            }
+        }
 
         .icon-action{
             height: 24px;
@@ -32,7 +45,7 @@
         }
 
         .bar-header{
-            margin-top: 100px;
+            padding: 16px 32px;
 
             .title-header{
                 font-weight: bold;
@@ -40,11 +53,12 @@
                 line-height: 32px;
                 margin-bottom: 8px;
             }
-        }
 
-        .header-text{
-            font-size: 17px;
-            font-style: italic;
+            .info-text{
+                font-size: 12px;
+                font-style: italic;
+                color: var(--shadow-color);
+            }
         }
     }
 </style>
