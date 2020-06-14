@@ -1,7 +1,7 @@
 <template>
-    <div class="app-header">
+    <div class="app-header shadow">
         <div class="icon-action">
-            <a class="">&lt;-</a>
+            <a class=""><Icon /></a>
         </div>        
         <header class="bar-header">
             <h2 class="title-header">Acesse nossa rede usando só seu WhatsApp</h2>
@@ -10,13 +10,17 @@
     </div>
 </template>
 <script>
-export default {};
+    import Icon from "@/components/Icon";
+    export default {
+        components: { Icon }
+    };
 </script>
 
 <style lang="scss" scope>
     .app-header{
         padding: 60px 32px 32px 32px;
         color: var(--neutral-color);
+        background: #ffffff;
 
         .icon-action{
             height: 24px;

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Grupo_35" data-name="Grupo 35" transform="translate(-32 -60)">
+    <rect id="Retângulo_14" data-name="Retângulo 14" width="24" height="24" transform="translate(32 60)" fill="#fff"/>
+    <g id="back" transform="translate(34 65)">
+      <path id="keyboard_backspace_-_material" data-name="keyboard_backspace - material" d="M18.18,5.834a.922.922,0,0,1,.82.82h0a.922.922,0,0,1-.82.82H3.2l4.391,4.409a.94.94,0,0,1,0,1.181h0a.939.939,0,0,1-1.18,0L0,6.654,6.41.244a.939.939,0,0,1,1.18,0h0a.94.94,0,0,1,0,1.181L3.2,5.834Z" transform="translate(0.5 0.346)" fill="#293340"/>
+    </g>
+  </g>
+</svg>
