@@ -1,22 +1,35 @@
 <template>
     <section class="tag-review">
         <header class="tag-header">            
-            <h3 class="tag-title">Pontos Positivos</h3>
-            <a href="#">ver todos</a>
+            <h3 class="tag-title">{{title}}</h3>
+            <a v-on:click="more">mostrar/ocultar</a>
         </header>
-        <section class="tag-cloud good">
-            <div class="tag"><span class="detail">Local para banho grátis</span><span class="count">6</span></div>
-            <div class="tag"><span class="detail">Local para banho limpo</span><span class="count">5</span></div>
-            <div class="tag"><span class="detail">Boa comida</span><span class="count">12</span></div>
-            <div class="tag"><span class="detail">Banheiros Limpos</span><span class="count">5</span></div>
-            <div class="tag"><span class="detail">Caixa 24h</span><span class="count">18</span></div>
-            <div class="more"><span class="detail">+20</span></div>
+        <section :class="type" class="tag-cloud">
+            <div class="tag" v-for="tag in tags.slice(0, this.limit)" v-bind:key="tag.id" v-bind:tag="tag"><span class="detail">{{tag.nome}}</span><span class="count">{{tag.qtd}}</span></div>
+            <div v-if="this.data.length - this.limit > 0" class="more">+{{this.data.length - this.limit}}</div>
         </section>
     </section>
 </template>
 
 <script>
-export default {};
+    export default {
+        props: ['title','data','type'],
+        data() {
+            return {
+                tags: this.data,
+                limit: 5
+            };
+        },
+        methods:{
+            more(){
+                if( this.limit > 5 ){
+                    this.limit = 5;
+                }else{
+                    this.limit = this.data.length;
+                }
+            }
+        }
+    };  
 </script>
 
 <style lang="scss" scoped>
