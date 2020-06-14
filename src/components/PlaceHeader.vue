@@ -9,7 +9,7 @@
         <header class="bar-header">
             <h2 class="title-header">{{ title }}</h2>
             <span class="info-text">{{ text }}</span>
-            <ReviewBar />
+            <ReviewBar good="1" neutral="1" bad="1" />
         </header>
     </div>
 </template>
@@ -19,7 +19,7 @@
     import ReviewBar from "@/components/ReviewBar";
     export default {
         components: { Icon, ReviewBar },
-        props: ['title','text','image']
+        props: ['title','text','image','review']
     };
 </script>
 
@@ -28,16 +28,6 @@
         color: var(--neutral-color);
         background: var(--background-color);
 
-        .header-cover{
-            min-height: 116px;
-            max-height: 210px;
-            overflow: hidden;
-
-            img{
-                min-width: 100%;
-            }
-        }
-
         .icon-action{
             height: 24px;
             width: 24px;
@@ -45,6 +35,22 @@
             position: absolute;
             top: 60px;
             left: 32px;
+
+            *{
+                z-index: 999;
+            }
+        }
+
+        .header-cover{
+            min-height: 116px;
+            max-height: 210px;
+            overflow: hidden;
+            z-index: -1;
+
+            img{
+                min-width: 100%;
+                max-width: 100%;
+            }
         }
 
         .bar-header{

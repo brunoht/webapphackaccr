@@ -22,6 +22,17 @@ const routes = [
     component: () => import('@/views/Teste.vue')
   },
   {
+    path: '/local',
+    name: 'local',
+    beforeEnter: (to, from, next) => {
+      if (!store.getters["auth/authenticated"]) {
+        return next({ name: "login" });
+      }
+      next();
+    },
+    component: () => import("@/views/places/Place.vue")
+  },
+  {
     path: '/sair',
     name: 'logout',
     beforeEnter: (to, from, next) => {
