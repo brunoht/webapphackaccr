@@ -18,25 +18,56 @@ export default {
 <style lang="scss">
 
 :root{
+  --background-color: #ffffff;
   --fore-color: #F6F7FB;
   --main-color: #177ce8;
   --main-color-s: #177ce833;
   --main-color-d: #1856E8;
   --good-color: #17E3B3;
-  --bad-color: #F75D34;
+  --bad-color: #f73666;
   --neutral-color: #293340;
-  --neutral-color-s: #293340;
+  --neutral-color-s: #29334033;
+  --neutral-color-ss: #2933401c;
   --shadow-color: #474D60;
   --shadow-color-s: #474D6033;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root{
+    --main-color: #177ce8;
+    --background-color: #161830;
+    --fore-color: #232945;
+    --bad-color: #F73666;
+    --neutral-color: #F6F7FB;
+    --neutral-color-s: #F6F7FB33;
+    --neutral-color-ss: #F6F7FB1c;
+    --shadow-color: rgba(255, 255, 255, 0.58);
+    --shadow-color-s: rgba(255, 255, 255, 0.20);
+  }
+}
+
+a{
+  color: var(--main-color);
+  text-decoration: none;
+}
+
 .base-padding{
   padding: 32px;
-  background: #ffffff;
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url('assets/bg.png');
+
+  &.min{
+    padding: 20px;
+    background-image: none;
+  }
 }
 
 .flex-height{
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .shadow{
@@ -54,6 +85,12 @@ html{
     min-height: 100vh;
     display: block;
   }
+}
+
+.divider{
+  height: 1px;
+  background: var(--neutral-color);
+  opacity: 0.01;
 }
 
 #app {
