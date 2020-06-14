@@ -1,12 +1,13 @@
 <template>
-  <div class="home">
-    <h1>Webapp Hackathon CCR</h1>
-    <h3>viva seu caminho</h3>
-  </div>
+  <Header />
 </template>
 
 <script>
-export default {
-  name: "Home"
-};
+  import Header from "@/components/Header";
+  export default {
+    name: "Home",
+    components: {
+      Header
+    }
+  };
 </script>

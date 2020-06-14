@@ -1,15 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <template v-if="!authenticated">
-        <router-link :to="{ name: 'login'}">Entrar</router-link>
-      </template>
-      <template v-else>
-        <router-link :to="{ name: 'dashboard'}">Dashboard</router-link>|
-        <router-link :to="{ name: 'logout'}">Sair</router-link>
-      </template>
-    </div>
     <router-view />
   </div>
 </template>
@@ -34,12 +24,14 @@ export default {
   --neutral-color: #293340;
 }
 
+.base-padding{
+  padding: 32px;
+}
 
 #app {
   font-family: 'Fira Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: var(--neutral-color);
 }
 </style>
