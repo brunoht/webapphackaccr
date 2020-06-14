@@ -1,18 +1,19 @@
 <template>
     <div class="app-header">
         <div class="icon-action">
-            <a class=""><Icon /></a>
+            <slot />
         </div>
         <header class="bar-header">
-            <h2 class="title-header">Acesse nossa rede usando só seu WhatsApp</h2>
-        </header>
-        <p class="header-text">é bem rápido!</p>
+            <h2 class="title-header">{{ title }}</h2>
+        </header> 
+        <p class="header-text">{{ text }}</p>
     </div>
 </template>
 
 <script>
     import Icon from "@/components/Icon";
     export default {
+        props: ['title','text'],
         components: { Icon }
     };
 </script>
