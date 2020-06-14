@@ -2,7 +2,7 @@
   <div class="flex-height base-padding">
     <div v-if="!sent">
       <div>
-        <Header />
+        <Header title="Acesse nossa rede usando só seu WhatsApp" text="é bem rápido!" />
         <div>
           <form v-on:submit.prevent="generateOTP">
             <div class="input-holder">
@@ -16,7 +16,9 @@
 
     <div v-else>
       <div>
-        <Header />
+        <Header title="Código verificador" text="o código que enviamos pra você pro seu Whatsapp">
+          <a><Icon icon="back"/></a>
+        </Header>
         <div>
           <form v-on:submit.prevent="submit">
             <input type="hidden" placeholder="Celular" v-model="form.mobile" />
@@ -25,6 +27,8 @@
                 <Button><Icon /></Button>
             </div>
           </form>
+
+          <span>{{this.code}}</span>
         </div>
       </div>
     </div>
@@ -52,7 +56,8 @@ export default {
         otp: null
       },
       loading: null,
-      sent: false
+      sent: false,
+      code: ''
     };
   },
   methods: {
@@ -67,6 +72,7 @@ export default {
         .then(function(response) {
           console.log("OTP Generated");
           console.log(response.data);
+          that.code = response.data;
           that.sent = true;
         })
         .catch(function(error) {

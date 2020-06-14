@@ -1,14 +1,14 @@
 <template>
     <div class="place-header">
         <div class="icon-action">
-            <a class=""><Icon /></a>
+            <slot />
         </div>
         <div class="header-cover">
-            <img src="https://placehold.it/375x210" />
+            <img :src="image" />
         </div>
         <header class="bar-header">
-            <h2 class="title-header">Posto Castelo Branco</h2>
-            <span class="info-text">Av Caxambu, Rua 23, Lote 15 • 0.7 kms</span>
+            <h2 class="title-header">{{ title }}</h2>
+            <span class="info-text">{{ text }}</span>
             <ReviewBar />
         </header>
     </div>
@@ -18,7 +18,8 @@
     import Icon from "@/components/Icon";
     import ReviewBar from "@/components/ReviewBar";
     export default {
-        components: { Icon, ReviewBar }
+        components: { Icon, ReviewBar },
+        props: ['title','text','image']
     };
 </script>
 
