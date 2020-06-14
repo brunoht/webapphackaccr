@@ -1,9 +1,14 @@
 <template>
-
+  <Layout></Layout>
 </template>
 
 <script>
-export default {};
+import Layout from "@/components/Component";
+export default {
+  components: {
+    Layout
+  }
+};
 </script>
 
 <style>
