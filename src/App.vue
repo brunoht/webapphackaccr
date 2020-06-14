@@ -2,15 +2,32 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <template v-if="!authenticated">
+        <router-link :to="{ name: 'login'}">Entrar</router-link>
+      </template>
+      <template v-else>
+        <router-link :to="{ name: 'dashboard'}">Dashboard</router-link> |
+        <router-link :to="{ name: 'logout'}">Sair</router-link>
+      </template>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
+<script>
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters({
+      authenticated: "auth/authenticated"
+    })
+  }
+};
+</script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
