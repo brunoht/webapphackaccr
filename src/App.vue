@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>|
       <template v-if="!authenticated">
         <router-link :to="{ name: 'login'}">Entrar</router-link>
       </template>
       <template v-else>
-        <router-link :to="{ name: 'dashboard'}">Dashboard</router-link> |
+        <router-link :to="{ name: 'dashboard'}">Dashboard</router-link>|
         <router-link :to="{ name: 'logout'}">Sair</router-link>
       </template>
     </div>

@@ -6,7 +6,14 @@
 
 <script>
 export default {
-  name: "dashboard"
+  name: "dashboard",
+  methods: {
+    loadUsers() {
+      axios.get("/users").then(function(response) {
+        console.log(response.data);
+      });
+    }
+  }
 };
 </script>
 
