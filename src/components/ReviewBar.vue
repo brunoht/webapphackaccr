@@ -1,13 +1,15 @@
 <template>
     <div class="reviewbar">
-        <span class="good-bar" style="flex:1000">10</span>
-        <span class="neutral-bar" style="flex:200">2</span>
-        <span class="bad-bar" style="flex:80">8</span>
+        <span class="good-bar" :style="'flex:' + good" >{{good}}</span>
+        <span class="neutral-bar" :style="'flex:' + neutral" >{{neutral}}</span>
+        <span class="bad-bar" :style="'flex:' + bad" >{{bad}}</span>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: ['good', 'neutral', 'bad']
+};
 </script>
 
 <style lang="scss">
