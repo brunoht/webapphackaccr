@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang:"scss">
+<style lang="scss">
 
 :root{
   --main-color: #187DE8;
@@ -36,23 +36,10 @@ export default {
 
 
 #app {
-  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  color: var(--neutral-color);
 }
 </style>
