@@ -2,11 +2,9 @@
   <div class="flex-height">
     <Place
       class="shadow"
-      title="Nome do Local"
-      text="endereço do local"
-      image="https://placehold.it/480x320"
-      review="[0,2,2]"
-    >
+      :title="this.place.name"
+      :text="this.place.address"
+      :image="this.place.image">
       <a>
         <Icon icon="back" />
       </a>
@@ -17,11 +15,11 @@
         <Button>Abrir no Maps</Button>
         <Button class="link">Compartilhar</Button>
       </div>
-      <ReviewTags type="good" title="Pontos Positivos" :data="tags" />
+      <ReviewTags type="good" :title="tags.good.title" :data="tags.good.tags"  />
       <hr />
-      <ReviewTags title="Pontos Neutros" :data="tags" />
+      <ReviewTags :title="tags.neutral.title" :data="tags.neutral.tags" />
       <hr />
-      <ReviewTags type="bad" title="Pontos Negativos" :data="tags" />
+      <ReviewTags type="bad" :title="tags.bad.title" :data="tags.bad.tags" />
       <hr />
       <Button class="link blockable">Avaliar Local</Button>
     </div>
@@ -58,15 +56,11 @@ export default {
         },
 
         neutral: {
-          type: "good",
-          title: "Pontos Positivos",
+          type: "neutral",
+          title: "Pontos Neutros",
           tags: [
-            { id: 1, nome: "Local para banho grátis", qtd: "6" },
-            { id: 2, nome: "Local para banho limpo", qtd: "5" },
-            { id: 3, nome: "Boa comida", qtd: "12" },
-            { id: 4, nome: "Banheiros Limpos", qtd: "5" },
-            { id: 5, nome: "Caixa 24h", qtd: "18" },
-            { id: 6, nome: "TV com Futebol", qtd: "20" }
+            { id: 1, nome: "Serve almoço", qtd: "10" },
+            { id: 2, nome: "Fraudário", qtd: "2" }
           ]
         },
 
@@ -74,20 +68,18 @@ export default {
           type: "bad",
           title: "Pontos Negativos",
           tags: [
-            { id: 1, nome: "Local para banho grátis", qtd: "6" },
-            { id: 2, nome: "Local para banho limpo", qtd: "5" },
-            { id: 3, nome: "Boa comida", qtd: "12" },
-            { id: 4, nome: "Banheiros Limpos", qtd: "5" },
-            { id: 5, nome: "Caixa 24h", qtd: "18" },
-            { id: 6, nome: "TV com Futebol", qtd: "20" }
+            { id: 1, nome: "Sinal da Tim ruim", qtd: "6" },
+            { id: 2, nome: "Sinal da Claro ruim", qtd: "5" },
+            { id: 3, nome: "Não tem pátio", qtd: "12" },
+            { id: 4, nome: "Não tem estacionamento adequado", qtd: "5" }
           ]
         }
       },
       place: {
         id: 1,
-        name: "",
-        address: "",
-        image: "",
+        name: "Nome do Local",
+        address: "Av. Juracy Magalhães, 721 - Centro  •  0.6 kms",
+        image: "https://placehold.it/360x240",
         google_maps_url: ""
       }
     };

@@ -2,7 +2,8 @@
     <section class="tag-review">
         <header class="tag-header">            
             <h3 class="tag-title">{{title}}</h3>
-            <a v-on:click="more">mostrar/ocultar</a>
+            <a v-if="this.data.length - this.limit > 0" v-on:click="more">mostrar todos</a>
+            <a v-if="this.limit > 5" v-on:click="more">ocultar</a>
         </header>
         <section :class="type" class="tag-cloud">
             <div class="tag" v-for="tag in tags.slice(0, this.limit)" v-bind:key="tag.id" v-bind:tag="tag"><span class="detail">{{tag.nome}}</span><span class="count">{{tag.qtd}}</span></div>

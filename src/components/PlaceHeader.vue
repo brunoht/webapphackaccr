@@ -4,12 +4,12 @@
             <slot />
         </div>
         <div class="header-cover">
-            <img :src="image" />
+            <img v-if="image != null" :src="image" />
         </div>
         <header class="bar-header">
             <h2 class="title-header">{{ title }}</h2>
             <span class="info-text">{{ text }}</span>
-            <ReviewBar good="1" neutral="1" bad="1" />
+            <ReviewBar v-if="review != null" good="1" neutral="1" bad="1" />
         </header>
     </div>
 </template>
