@@ -4,8 +4,7 @@
       <Place
         class="shadow"
         :title="this.place.name"
-        :text="this.place.address"
-        :image="this.place.image">
+        :text="this.place.address">
         <a>
           <Icon icon="back" />
         </a>

@@ -1,9 +1,11 @@
 <template>
-    <img src="icons/teste.svg" class="icon" />
+    <img :src="'/icons/'+icon+'.svg'" class="icon" />
 </template>
 
 <script>
-    export default {};
+    export default {
+        props: ['icon']
+    };
 </script>
 
 <style lang="scss" scope>

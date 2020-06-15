@@ -34,7 +34,7 @@
             display: inline-block;
             position: absolute;
             top: 60px;
-            left: 32px;
+            left: 20px;
 
             *{
                 z-index: 999;
@@ -60,6 +60,7 @@
                 font-weight: bold;
                 font-size: 27px;
                 line-height: 1;
+                margin: 0;
                 margin-bottom: 8px;
             }
 
