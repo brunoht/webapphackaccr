@@ -2,7 +2,7 @@
 
 ## PITSTOP : viva seu caminho
 
-Sistema webapp desenvolvido durante o Hackathon CRR, promovido pela Shawee, com
+Sistema webapp desenvolvido durante o Hackathon CCR, promovido pela Shawee, com
 o objetivo de oferecer soluções inovadoras que estimulem e promova a melhor qualidade
 de vida para os caminhoneiros durante as suas viagens. 
 
