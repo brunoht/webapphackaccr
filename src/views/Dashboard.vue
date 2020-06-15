@@ -16,20 +16,28 @@
           </section>
       </section>
     </section>
-    <div>
-
+    <div class="result-list">
+      <Place
+        class="shadow"
+        v-for="item in results"
+        v-bind:key="item.id"
+        :title="item.name"
+        :text="item.address"
+        :image="item.image">
+      </Place>
     </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Place from "@/components/PlaceHeader";
 import Icon from "@/components/Icon";
 import { mapGetters } from "vuex";
 export default {
   name: "Home",
   components: {
-    Header, Icon
+    Header, Icon, Place
   },
   data() {
     return {      
@@ -59,9 +67,9 @@ export default {
       results: [
         {
           id: 1,
-          name: "",
-          address: "",
-          image: "",
+          name: "Nome do Local",
+          address: "Av. Juracy Magalhães, 721 - Centro  •  0.6 kms",
+          image: "https://placehold.it/360x240",
           google_maps_url: "",
           tags: {
             good: 10,
@@ -96,6 +104,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .result-list{
+    & > *{
+      margin-top: 10px;
+    }
+    margin-bottom: 32px;
+  }
 
     .input-holder{
         display: flex;
