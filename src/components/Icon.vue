@@ -18,6 +18,7 @@
 
         &.light{ color: #ffffff;}
         &.dark{ color: #161830;}
+        &.main{ color: var(--main-color);}
 
         &.min{
             height: 16px;

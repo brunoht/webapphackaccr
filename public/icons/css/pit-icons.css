@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'pit-icons';
-  src: url('../font/pit-icons.eot?61019242');
-  src: url('../font/pit-icons.eot?61019242#iefix') format('embedded-opentype'),
-       url('../font/pit-icons.woff2?61019242') format('woff2'),
-       url('../font/pit-icons.woff?61019242') format('woff'),
-       url('../font/pit-icons.ttf?61019242') format('truetype'),
-       url('../font/pit-icons.svg?61019242#pit-icons') format('svg');
+  src: url('../font/pit-icons.eot?92250760');
+  src: url('../font/pit-icons.eot?92250760#iefix') format('embedded-opentype'),
+       url('../font/pit-icons.woff2?92250760') format('woff2'),
+       url('../font/pit-icons.woff?92250760') format('woff'),
+       url('../font/pit-icons.ttf?92250760') format('truetype'),
+       url('../font/pit-icons.svg?92250760#pit-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'pit-icons';
-    src: url('../font/pit-icons.svg?61019242#pit-icons') format('svg');
+    src: url('../font/pit-icons.svg?92250760#pit-icons') format('svg');
   }
 }
 */
@@ -58,3 +58,4 @@
 .icon-foward:before { content: '\e800'; } /* '' */
 .icon-back:before { content: '\e801'; } /* '' */
 .icon-menu:before { content: '\e802'; } /* '' */
+.icon-busca:before { content: '\e803'; } /* '' */

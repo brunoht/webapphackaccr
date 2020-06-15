@@ -1,68 +1,46 @@
 <template>
-  <div class="flex-height base-padding">
-    <Header />
+  <div class="flex-height">
+    <section class="base-padding shadow">
+      <Header><a><Icon icon="menu" /></a></Header>
+      
+      <div class="input-holder">
+        <input class="input-search" type="text" placeholder="Pesquisar por local" />
+      </div>
+      
+      <section class="tag-review">
+          <header class="tag-header">            
+              <h3 class="tag-title">Destaques</h3>
+          </header>
+          <section class="tag-cloud">
+              <div class="tag" v-for="tag in tags_highlight" v-bind:key="tag.id" v-bind:tag="tag" :class="type(tag.type)"><span class="detail">{{tag.nome}}</span></div>
+          </section>
+      </section>
+    </section>
     <div>
-      <input type="text" placeholder="Pesquisar por local" />
 
-      <hr />
-
-      <!-- SECTION 1 -->
-      <div>
-        <h2>Destaques</h2>
-        <ul>
-          <li>Local para banho limpo</li>
-          <li>Caixa 24h</li>
-          <li>Refeições 24h</li>
-        </ul>
-      </div>
-
-      <hr />
-
-      <!-- SECTION 2 -->
-      <div id="videos">
-        <template>
-          <img src alt="video_cover" />
-          <span>Dica no app</span>
-          <p>Como se alimentar melhor nas estradas sem gastar mais</p>
-        </template>
-      </div>
-
-      <hr />
-
-      <!-- SECTION 3 -->
-      <div id="adds">
-        <template>
-          <span>distancia</span>
-          <span>Nome Patrocinador</span>
-          <img src alt="add_background" />
-          <button>Saber mais</button>
-        </template>
-      </div>
-
-      <hr />
-
-      <!-- SECTION 4 -->
-      <div id="places_to_eat">
-        <template>
-          <h4>Posto Castelo Branco</h4>
-          <span id="review"></span>
-          <p>Endereço</p>
-        </template>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Icon from "@/components/Icon";
 import { mapGetters } from "vuex";
 export default {
   name: "Home",
   components: {
-    Header
+    Header, Icon
   },
   data() {
-    return {
+    return {      
+      tags_highlight: [
+        { id: 1, nome: "Local para banho grátis", type: 1 },
+        { id: 2, nome: "Local para banho limpo", type: 1 },
+        { id: 3, nome: "Boa comida", type: 1 },
+        { id: 4, nome: "Banheiros Limpos", type: 1 },
+        { id: 5, nome: "Caixa 24h", type: 1 },
+        { id: 6, nome: "TV com Futebol", type: 1 }
+      ],
       search: null,
       filters: [
         {
@@ -99,6 +77,14 @@ export default {
       axios.get("/users").then(function(response) {
         console.log(response.data);
       });
+    },
+    type(num){
+        if (num < 0)
+            return 'bad';
+        else if (num > 0)
+            return 'good';
+        else
+            return 'neutral';
     }
   },
   computed: {
@@ -109,5 +95,132 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+    .input-holder{
+        display: flex;
+        border-radius: 24px;
+        border: 2px solid #C8C8C8;
+        background-color: var(--background-color);
+
+        .icon{
+          font-size: 24px;
+        }
+
+        .input-search{
+            border: none;
+            padding: 16px 24px;
+            line-height: 16px;
+            border-radius: 24px;
+            font-size: 14px;
+            flex: 1;
+            background-color: var(--background-color);
+            color: var(--neutral-color);
+
+            &:focus{
+              border: none;
+              outline: none;
+
+              @at-root .input-holder#{&} {
+                border-color: var(--main-color)
+              }
+            }
+        }
+    }
+
+    .tag-review{
+        font-size: 13px;
+        margin-top: 30px;
+
+        .tag-header{
+            display: flex;
+            flex-direction: row;
+            line-height: 16px;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .tag-title{
+                color: var(--neutral-color);
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+
+        .tag-cloud{
+            margin-top: 10px;
+
+            .more{
+                display: inline-block;
+                border-radius: 20px;
+                margin: 0 10px 10px 0;
+                padding: 7px;
+                line-height: 16px;
+            }
+
+            &.good{
+                .tag{
+                    border: 1px solid var(--good-color);
+                    color: 1px solid var(--good-color);
+                    .count{
+                        background-color: var(--good-color);
+                        color: var(--background-color);
+                    }
+                }
+            }
+
+            &.bad{
+                .tag{
+                    border: 1px solid var(--bad-color);
+                    color: 1px solid var(--bad-color);
+                    .count{
+                        background-color: var(--bad-color);
+                        color: var(--background-color);
+                    }
+                }
+            }
+
+            .tag{
+                display: inline-block;
+                border: 1px solid var(--neutral-color);
+                color: 1px solid var(--neutral-color);
+                padding: 3px;
+                border-radius: 20px;
+                margin: 0 10px 10px 0;
+
+                .detail{
+                    padding: 4px 7px;
+                    line-height: 16px;
+                }
+
+                .count{
+                    background-color: var(--neutral-color);
+                    color: var(--background-color);
+                    width: 24px;
+                    height: 24px;
+                    line-height: 24px;
+                    text-align: center;
+                    display: inline-block;
+                    border-radius: 12px;
+                }
+
+                &.good{
+                    border: 1px solid var(--good-color);
+                    color: 1px solid var(--good-color);
+                    .count{
+                        background-color: var(--good-color);
+                        color: var(--background-color);
+                    }
+                }
+
+                &.bad{
+                    border: 1px solid var(--bad-color);
+                    color: 1px solid var(--bad-color);
+                    .count{
+                        background-color: var(--bad-color);
+                        color: var(--background-color);
+                    }
+                }
+            }
+        }
+    }
 </style>
