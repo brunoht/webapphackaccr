@@ -7,8 +7,13 @@
 </script>
 
 <style lang="scss" scope>
+    .float{
+        position: absolute;
+        bottom: 32px;
+        right: 32px;
+    }
     .button{
-        padding: 12px 12px;
+        padding: 12px 24px;
         line-height: 24px;
         background: var(--main-color);
         color: #ffffff;

@@ -78,12 +78,13 @@ a{
 html{
   background: var(--fore-color);
   margin: 0px;
-  min-height: 100vh;
+  min-height: 100%;
+  display: flex;
 
   body{
+    flex: 1;
     margin: 0px;
-    min-height: 100vh;
-    display: block;
+    display: flex;
   }
 }
 
@@ -98,7 +99,7 @@ html{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--neutral-color);
-  min-height: 100vh;
   display: flex;
+  flex: 1;
 }
 </style>
