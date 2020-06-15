@@ -47,6 +47,9 @@ export default {
       user: "auth/user"
     }),
     submit() {
+      console.log(this.form);
+      
+
       let obj = this.user();
       let that = this;
       axios
