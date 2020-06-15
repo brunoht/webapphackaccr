@@ -4,24 +4,28 @@
             <h3 class="checklist-title">Sobre acomodações</h3>
         </header>
         <section class="item-list">
-            <div class="item good">
-                <input type="checkbox" id="t1" />
-                <label class="detail" for="t1">Lorem Ipsum</label>
-            </div>
-            <div class="item">
-                <input type="checkbox" id="t2" />
-                <label class="detail" for="t2">Lorem Ipsum</label>
-            </div>
-            <div class="item bad">
-                <input type="checkbox" id="t3" />
-                <label class="detail" for="t3">Lorem Ipsum</label>
+            <div v-for="item in data.tags" v-bind:key="item.id" :class="'item ' + type(item.type)">
+                <input type="checkbox" :id="'tag-'+item.id" v-bind:checked="item.checked" />
+                <label class="detail" :for="'tag-'+item.id">{{item.nome}}</label>
             </div>
         </section>
     </section>
 </template>
 
 <script>
-export default {};
+export default {
+    props: ['data'],
+    methods:{
+        type(num){
+            if (num < 0)
+                return 'bad';
+            else if (num > 0)
+                return 'good';
+            else
+                return 'neutral';
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
