@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
+<defs>
+<font id="pit-icons" horiz-adv-x="1000" >
+<font-face font-family="pit-icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="foward" unicode="&#xe800;" d="M138 316a38 38 0 0 0-34 34h0a38 38 0 0 0 34 34l625 0-183 184a39 39 0 0 0 0 49h0a39 39 0 0 0 49 0l267-267-267-267a39 39 0 0 0-49 0h0a39 39 0 0 0 0 49l183 184z" horiz-adv-x="1000" />
+
+<glyph glyph-name="back" unicode="&#xe801;" d="M862 384a38 38 0 0 0 34-34h0a38 38 0 0 0-34-34h-624l183-184a39 39 0 0 0 0-49h0a39 39 0 0 0-50 0l-267 267 267 267a39 39 0 0 0 49 0h0a39 39 0 0 0 0-49l-182-184z" horiz-adv-x="1000" />
+
+<glyph glyph-name="menu" unicode="&#xe802;" d="M167 58a42 42 0 0 0 0 84h666a42 42 0 0 0 0-84z m125 250a42 42 0 1 0 0 84h416a42 42 0 0 0 0-84z m-125 250a42 42 0 0 0 0 84h666a42 42 0 0 0 0-84z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

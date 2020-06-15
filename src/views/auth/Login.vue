@@ -7,7 +7,7 @@
           <form v-on:submit.prevent="generateOTP">
             <div class="input-holder">
                 <input class="input-phone" type="text" placeholder="Celular Whatsapp" v-model="form.mobile" />
-                <Button><Icon /></Button>
+                <Button><Icon icon="foward" class="light" /></Button>
             </div>
           </form>
         </div>
@@ -24,7 +24,7 @@
             <input type="hidden" placeholder="Celular" v-model="form.mobile" />
             <div class="input-holder">
                 <input class="input-otp" type="number" placeholder="****" v-model="form.otp" maxlength="4" size="4" />
-                <Button><Icon /></Button>
+                <Button><Icon icon="foward" class="light" /></Button>
             </div>
           </form>
 

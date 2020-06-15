@@ -13,11 +13,12 @@
 <script>
   import Button from "@/components/Button";
   import Header from "@/components/Header";
+  import Share from "@/components/Share";
   import { mapGetters } from "vuex";
   export default {
     name: "Home",
     components: {
-      Header, Button
+      Header, Button, Share
     },
     computed: {
       ...mapGetters({
