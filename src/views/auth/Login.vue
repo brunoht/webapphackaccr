@@ -28,7 +28,7 @@
             </div>
           </form>
 
-          <span>{{this.code}}</span>
+          <span v-if="this.code"><br>Sua senha de acesso: {{this.code}}</span>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ export default {
         .then(function(response) {
           console.log("OTP Generated");
           console.log(response.data);
-          that.code = response.data;
+          that.code = response.data.otp;
           that.sent = true;
         })
         .catch(function(error) {
