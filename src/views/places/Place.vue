@@ -4,18 +4,19 @@
       class="shadow"
       :title="this.place.name"
       :text="this.place.address"
-      :image="this.place.image">
-      <a>
+      :image="this.place.image"
+    >
+      <router-link :to="{ name: 'dashboard'}">
         <Icon icon="back" />
-      </a>
+      </router-link>
     </Place>
     <div class="divider"></div>
     <div class="base-padding">
       <div class="buttons">
-        <Button>Abrir no Maps</Button>
-        <Button class="link">Compartilhar</Button>
+        <Button v-on:buttonClick="openGoogleMaps">Abrir no Maps</Button>
+        <Button class="link" v-on:buttonClick="shareWithWhatsapp">Compartilhar</Button>
       </div>
-      <ReviewTags type="good" :title="tags.good.title" :data="tags.good.tags"  />
+      <ReviewTags type="good" :title="tags.good.title" :data="tags.good.tags" />
       <hr />
       <ReviewTags :title="tags.neutral.title" :data="tags.neutral.tags" />
       <hr />
@@ -80,9 +81,19 @@ export default {
         name: "Nome do Local",
         address: "Av. Juracy Magalhães, 721 - Centro  •  0.6 kms",
         image: "https://placehold.it/360x240",
-        google_maps_url: ""
+        google_maps_url: "https://goo.gl/maps/pMkcW9jBfVTSbb4VA"
       }
     };
+  },
+  methods: {
+    openGoogleMaps() {
+      window.open(this.place.google_maps_url);
+    },
+    shareWithWhatsapp() {
+      let url = window.location.href;
+      let message = "Achei este ponto interessante: ";
+      window.open("whatsapp://send?text=" + message + url);
+    }
   }
 };
 </script>
