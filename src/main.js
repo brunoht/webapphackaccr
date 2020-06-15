@@ -5,8 +5,8 @@ import router from './router'
 import store from './store'
 
 require("@/store/subscriber");
-// axios.defaults.baseURL = "https://app.hack.lohl.com.br/api";
-axios.defaults.baseURL = "http://localhost:8000/api";
+axios.defaults.baseURL = "https://app.hack.lohl.com.br/api";
+// axios.defaults.baseURL = "http://localhost:8000/api";
 
 Vue.config.productionTip = false;
 
