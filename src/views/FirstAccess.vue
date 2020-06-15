@@ -3,7 +3,12 @@
     <Header title="Oi!" text="conta pra gente sobre você antes da gente começar."></Header>
     <div class="flex-height">
       <div class="input-holder">
-        <input class="input" type="text" placeholder="Como gostria de ser chamado?" v-model="form.name"/>
+        <input
+          class="input"
+          type="text"
+          placeholder="Como gostria de ser chamado?"
+          v-model="form.name"
+        />
       </div>
       <div class="sub-title">Você é</div>
       <div class="genders">
@@ -17,8 +22,8 @@
         </div>
       </div>
     </div>
-    <div class="button-bar">      
-      <Button v-on:click="submit">Começar a usar</Button>
+    <div class="button-bar">
+      <Button v-on:buttonClick="submit">Começar a usar</Button>
     </div>
   </div>
 </template>
@@ -70,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
-.button-bar{
+.button-bar {
   text-align: right;
   margin-top: 16px;
 }
@@ -101,7 +106,7 @@ export default {
 
 .radio {
   display: inline-block;
-  label{
+  label {
     display: inline-block;
     min-width: 48px;
     padding: 12px 12px;
@@ -115,7 +120,7 @@ export default {
     border: 2px solid var(--shadow-color-s);
   }
 
-  input{
+  input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
