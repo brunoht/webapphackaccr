@@ -30,6 +30,7 @@ export default {
   --neutral-color-ss: #2933401c;
   --shadow-color: #474D60;
   --shadow-color-s: #474D6033;
+  --overscreen: #232945A0;
 }
 
 @media (prefers-color-scheme: dark) {

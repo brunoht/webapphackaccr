@@ -1,13 +1,8 @@
 <template>
   <div class="flex-height box">
     <div class="flex-height">      
-      <Place
-        class="shadow"
-        :title="this.place.name"
-        :text="this.place.address">
-        <a>
-          <Icon icon="back" />
-        </a>
+      <Place class="shadow" :title="this.place.name" :text="this.place.address">
+        <a><Icon icon="back" /></a>
       </Place>
       <div class="divider"></div>
       <div class="base-padding min">
@@ -16,7 +11,7 @@
     </div>
     <div>
       <div class="button-bar">      
-        <Button v-on:click="">Começar a usar</Button>
+        <Button>Começar a usar</Button>
       </div>      
     </div>
   </div>

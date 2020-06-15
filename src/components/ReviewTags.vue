@@ -33,7 +33,7 @@
     };  
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .tag-review{
         font-size: 13px;
         margin-top: 30px;
@@ -107,6 +107,24 @@
                     text-align: center;
                     display: inline-block;
                     border-radius: 12px;
+                }
+
+                &.good{
+                    border: 1px solid var(--good-color);
+                    color: 1px solid var(--good-color);
+                    .count{
+                        background-color: var(--good-color);
+                        color: var(--background-color);
+                    }
+                }
+
+                &.bad{
+                    border: 1px solid var(--bad-color);
+                    color: 1px solid var(--bad-color);
+                    .count{
+                        background-color: var(--bad-color);
+                        color: var(--background-color);
+                    }
                 }
             }
         }

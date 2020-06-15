@@ -1,5 +1,5 @@
 <template>
-    <img :src="'/icons/'+icon+'.svg'" class="icon" />
+    <span :class="'icon icon-' + icon"></span>
 </template>
 
 <script>
@@ -12,10 +12,19 @@
     .icon{
         height: 24px;
         width: 24px;
+        font-size: 24px;
+        line-height: 24px;
+        color: var(--neutral-color);
+
+        &.light{ color: #ffffff;}
+        &.dark{ color: #161830;}
+        &.main{ color: var(--main-color);}
 
         &.min{
             height: 16px;
             width: 16px;
+            font-size: 16px;
+            line-height: 16px;
         }
     }
 </style>
